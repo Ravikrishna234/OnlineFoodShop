@@ -6,9 +6,6 @@ function Header(props) {
     return <React.Fragment>
         <header className={classes.header}>
             <h1>Online Food Shop</h1>
-            {/* <HeaderCartButton onClick={props.showCartHandler}></HeaderCartButton> */}
-            {/* <HeaderCartButton onClick={PaymentResponse.}></HeaderCartButton> */}
-            {/* <HeaderCartButton onClick={props.onshow */}
             <HeaderCartButton onClick={props.onShowCart}></HeaderCartButton>
         </header>
         <div className={classes.foodImage}>

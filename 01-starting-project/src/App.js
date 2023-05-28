@@ -1,7 +1,9 @@
-import React, {Fragment, useState} from 'react';
+import React, { useState} from 'react';
 import Header from './components/Layout/Header';
 import Food from './components/Food/Food';
 import Cart from './components/Cart/Cart';
+import CartProvider from './store/CartProvider';
+import CartContext from './store/cart-context';
 
 function App() {
   const [displayCartModal, setdisplayCartModal] = useState(false);
@@ -15,13 +17,20 @@ function App() {
   }
   
   return (
-    <Fragment>
+    // <Fragment>
+    // <CartContext.Provider value={null}>
+    <CartProvider>
       {displayCartModal && <Cart onClose = {hideCartHandler}></Cart>}
       <Header onShowCart={showCartHandler}></Header>
       <main>
         <Food></Food>
       </main>
-    </Fragment>
+      </CartProvider>
+      //  </CartContext.Provider>
+
+        
+  
+    
   );
 }
 
