@@ -2,8 +2,10 @@ import React, {useRef, useState} from 'react';
 import classes from './FoodItemForm.module.css';
 import Input from '../../UI/Input';
 function FoodItemForm(props) {
+
     const [amountIsValid, setamountIsValid] = useState(true)
     const amountInputRef = useRef();
+    
     const submitHandler = (event) => {
         event.preventDefault();
         const enteredAmount = amountInputRef.current.value;
@@ -19,7 +21,6 @@ function FoodItemForm(props) {
             ref={amountInputRef}
             label='Quantity' 
             input={{
-                // id: 'amount_' + props.id,
                 id: 'quantity_' + props.id,
                 type:'number',
                 min: '1',

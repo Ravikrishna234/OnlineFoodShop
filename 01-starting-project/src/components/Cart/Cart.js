@@ -1,11 +1,9 @@
 import React, {useContext} from 'react';
 import Modal from "../UI/Modal";
-// import { useContext } from 'react';
 import CartContext from '../../store/cart-context';
 import classes from './Cart.module.css';
 import CartItem from './CartItem'
 function Cart(props) {
-    // const cartCtx = useContext(ca)
     const cartCtx = useContext(CartContext);
     const totalAmount = '₹' + `${cartCtx.totalAmount.toFixed(2)}`
     console.log(cartCtx);

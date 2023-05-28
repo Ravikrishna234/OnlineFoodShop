@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, {useState} from 'react';
 import Header from './components/Layout/Header';
 import Food from './components/Food/Food';
 import Cart from './components/Cart/Cart';
@@ -17,8 +17,6 @@ function App() {
   }
   
   return (
-    // <Fragment>
-    // <CartContext.Provider value={null}>
     <CartProvider>
       {displayCartModal && <Cart onClose = {hideCartHandler}></Cart>}
       <Header onShowCart={showCartHandler}></Header>
@@ -26,11 +24,6 @@ function App() {
         <Food></Food>
       </main>
       </CartProvider>
-      //  </CartContext.Provider>
-
-        
-  
-    
   );
 }
 
