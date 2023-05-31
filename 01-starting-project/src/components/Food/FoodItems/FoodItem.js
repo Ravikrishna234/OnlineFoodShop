@@ -24,10 +24,10 @@ function FoodItem(props) {
                 <div className={classes.price}>{price}</div>
             </div>
             <div>
-                <FoodItemForm onAddToCart={addItemToCartHandler} id={props.id}></FoodItemForm>
+                <FoodItemForm id={props.id} onAddToCart={addItemToCartHandler}></FoodItemForm>
             </div>
         </li>
     )
 }
 
-export default FoodItem;    
+export default FoodItem;   
