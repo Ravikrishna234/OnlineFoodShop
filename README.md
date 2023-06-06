@@ -7,3 +7,12 @@ This app resembles a seamless user-friendly experience for food enthusiasts to e
 - Add your favorite items to cart.
 - Update your Cart based on your choice of purchase.
 
+## Installation
+1) Clone the Repository
+	> git clone https://github.com/Ravikrishna234/OnlineFoodShop.git
+2) Navigate to the Project Directory
+	> cd OnlineFoodShop
+3) Install the Dependencies
+	> npm install
+4) Start the development server
+	> npm run start
