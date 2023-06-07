@@ -8,7 +8,7 @@ const defaultCartState = {
 
 const cartReducer = (state, action) => {
     console.log(state);
-    console.log(action);
+    //console.log(action);
 
     if(!state.items) {
         state = {totalAmount: state.totalAmount, items: []};
@@ -42,22 +42,21 @@ const cartReducer = (state, action) => {
         
         case 'REMOVE':
             console.log('id', action.id);
-            const checkRemovalItemId = state.items?.findIndex((item) => item.id == action.id);
+            const checkRemovalItemId = state.items?.findIndex((item) => item.id === action.id);
             const itemremovalIndex = state.items && state.items[checkRemovalItemId];
-
             const updatedTotalamount = state.totalAmount - itemremovalIndex.price;
 
             let updatedRemovalItems;
 
             let updatedItem;
             if(itemremovalIndex.quantity == 1) {
-                updatedItem = state.items?.filter((item) => item.id !== action.id);
+                updatedRemovalItems = state.items?.filter((item) => item.id !== action.id);
             } else {
                 updatedItem = {...itemremovalIndex, quantity: itemremovalIndex.quantity - 1};
                 updatedRemovalItems = [...state.items];
                 updatedRemovalItems[checkRemovalItemId] = updatedItem;
             }
-           
+            console.log("updatedItems", updatedRemovalItems)
             return {
                 items: updatedRemovalItems,
                 totalAmount: updatedTotalamount

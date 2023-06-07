@@ -14,7 +14,7 @@ function FoodItem(props) {
             price: props.price
         })
     }
-    console.log(props);
+    // console.log(props);
     const price = '₹' + `${props.price.toFixed(2)}`;
     return (
         <li className={classes.meal}>
