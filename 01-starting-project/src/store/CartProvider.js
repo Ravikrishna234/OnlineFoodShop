@@ -9,7 +9,6 @@ const defaultCartState = {
 const cartReducer = (state, action) => {
     // console.log(state);
     //console.log(action);
-
     if(!state.items) {
         state = {totalAmount: state.totalAmount, items: []};
     }
@@ -37,7 +36,8 @@ const cartReducer = (state, action) => {
 
             return {
                 items: updatedItems,
-                totalAmount: updatedTotalAmount
+                // totalAmount: Math.abs(updatedTotalamount)
+                totalAmount: +updatedTotalAmount
             }
         
         case 'REMOVE':
@@ -59,7 +59,9 @@ const cartReducer = (state, action) => {
             // console.log("updatedItems", updatedRemovalItems);
             return {
                 items: updatedRemovalItems,
-                totalAmount: updatedTotalamount
+                totalAmount: Math.abs(updatedTotalamount)
+                // totalAmount: Math.abs(updatedTotalamount)
+                // totalAmount: +updatedTotalamount
             }
         default:
             return defaultCartState;
