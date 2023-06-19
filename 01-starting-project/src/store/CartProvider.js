@@ -7,7 +7,7 @@ const defaultCartState = {
 }
 
 const cartReducer = (state, action) => {
-    console.log(state);
+    // console.log(state);
     //console.log(action);
 
     if(!state.items) {
@@ -25,11 +25,11 @@ const cartReducer = (state, action) => {
                     ...itemIndex,
                     quantity: itemIndex.quantity + action.item.quantity
                 }
-                console.log(updatedItem);   
+                // console.log(updatedItem);   
                 updatedItems = [...state.items];
-                console.log(updatedItems);
+                // console.log(updatedItems);
                 updatedItems[checkexistingCartItemindex] = updatedItem
-                console.log(itemIndex);
+                // console.log(itemIndex);
                 
             } else {
                  updatedItems = state.items?.concat(action.item);
@@ -41,7 +41,7 @@ const cartReducer = (state, action) => {
             }
         
         case 'REMOVE':
-            console.log('id', action.id);
+            // console.log('id', action.id);
             const checkRemovalItemId = state.items?.findIndex((item) => item.id === action.id);
             const itemremovalIndex = state.items && state.items[checkRemovalItemId];
             const updatedTotalamount = state.totalAmount - itemremovalIndex.price;
@@ -56,7 +56,7 @@ const cartReducer = (state, action) => {
                 updatedRemovalItems = [...state.items];
                 updatedRemovalItems[checkRemovalItemId] = updatedItem;
             }
-            console.log("updatedItems", updatedRemovalItems)
+            // console.log("updatedItems", updatedRemovalItems);
             return {
                 items: updatedRemovalItems,
                 totalAmount: updatedTotalamount
@@ -67,7 +67,7 @@ const cartReducer = (state, action) => {
 };
 
 function CartProvider(props) {
-    console.log(props);
+    // console.log(props);
     const [cartState, dispatchCartAction] = useReducer(cartReducer, defaultCartState);
 
     const addItemToCartHandler = (item) => {

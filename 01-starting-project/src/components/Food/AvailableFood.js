@@ -37,7 +37,7 @@ function AvailableFood() {
 
     return (
         // <section className="classes.meals">
-        <section className = {classes.meals}>
+        <section  className = {classes.meals}>
             <Card>
                 <ul>{foodItems}</ul>
             </Card>
