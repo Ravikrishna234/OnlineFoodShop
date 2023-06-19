@@ -2,6 +2,10 @@
 
 This app resembles a seamless user-friendly experience for food enthusiasts to explore a wide range of dishes, add their favorite items to the cart, and easily update their cart as they go.
 
+# Demo
+A live demo of the Expense Tracker can be found on CodeSandbox at the following link:
+[Online Food Shop Demo](https://ravi-online-food-shop.vercel.app/)
+
 # Features
 - A Simple UI that supports Mobile, Android and Tablet versions.
 - Add your favorite items to cart.
