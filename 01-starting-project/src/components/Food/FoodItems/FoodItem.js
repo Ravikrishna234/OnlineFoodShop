@@ -3,7 +3,7 @@ import classes from './FoodItem.module.css';
 import FoodItemForm from "./FoodItemForm";
 import CartContext from "../../../store/cart-context";
 function FoodItem(props) {
-
+    // console.log('Food Item Running');
     const cartCtx = useContext(CartContext);
     
     const addItemToCartHandler = (quantity) => {
@@ -30,4 +30,4 @@ function FoodItem(props) {
     )
 }
 
-export default FoodItem;   
+export default React.memo(FoodItem);   

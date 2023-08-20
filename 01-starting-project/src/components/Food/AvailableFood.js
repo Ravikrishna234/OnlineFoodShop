@@ -25,6 +25,7 @@ const DUMMY_FOOD = [
 ]
 
 function AvailableFood() {
+    // console.log('Available Food Running');
     const foodItems = DUMMY_FOOD.map((item) =>  (
         <FoodItem 
             id={item.id}
